@@ -1166,19 +1166,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\itach\\.nuget\\packages\\": {}
+    "C:\\Users\\ivanf\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\itach\\Desktop\\EnrollmentApp\\EnrollmentApp.csproj",
+      "projectUniqueName": "C:\\Users\\ivanf\\Desktop\\C# T4\\WEBCS\\EnrollmentApp.csproj",
       "projectName": "EnrollmentApp",
-      "projectPath": "C:\\Users\\itach\\Desktop\\EnrollmentApp\\EnrollmentApp.csproj",
-      "packagesPath": "C:\\Users\\itach\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\itach\\Desktop\\EnrollmentApp\\obj\\",
+      "projectPath": "C:\\Users\\ivanf\\Desktop\\C# T4\\WEBCS\\EnrollmentApp.csproj",
+      "packagesPath": "C:\\Users\\ivanf\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ivanf\\Desktop\\C# T4\\WEBCS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\itach\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ivanf\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1201,7 +1201,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -1227,6 +1228,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1235,7 +1254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
