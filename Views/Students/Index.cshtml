@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EnrollmentApp.Models.Student>
+@{ ViewData["Title"] = "Estudiantes"; }
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold text-success">🎓 Estudiantes</h2>
+    <a asp-action="Create" class="btn btn-success shadow-sm">Registrar Estudiante</a>
+</div>
+
+<div class="card shadow border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Estudiante</th>
+                    <th>Contacto</th>
+                    <th>Cursos Inscritos</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td class="ps-4">
+                        <div class="fw-bold">@item.FirstName @item.LastName</div>
+                        <small class="text-muted">Nacimiento: @item.DateOfBirth.ToShortDateString()</small>
+                    </td>
+                    <td>
+                        <div><i class="bi bi-envelope"></i> @item.Email</div>
+                        <small class="text-muted">@item.Phone</small>
+                    </td>
+                    <td>
+                        <span class="badge bg-secondary rounded-pill">
+                            @(item.EnrolledCourseIds?.Count ?? 0) cursos
+                        </span>
+                    </td>
+                    <td>
+                        <a asp-controller="Enrollment" asp-action="Create" asp-route-studentId="@item.Id" 
+                           class="btn btn-sm btn-outline-primary">
+                           + Matricular
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        @if (!Model.Any()) { <div class="p-4 text-center text-muted">No hay estudiantes registrados.</div> }
+    </div>
+</div>

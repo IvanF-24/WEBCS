@@ -1,0 +1,34 @@
+﻿@model EnrollmentApp.Models.Student
+@{
+    ViewData["Title"] = "Detalle estudiante";
+}
+<h2>@Model.FirstName @Model.LastName</h2>
+
+<div class="detail-grid">
+  <div><strong>Correo:</strong> @Model.Email</div>
+  <div><strong>Teléfono:</strong> @Model.Phone</div>
+  <div><strong>Dirección:</strong> @Model.Address</div>
+  <div><strong>Programa:</strong>
+    @{
+      var programs = ViewBag.Programs as Dictionary<Guid,string>;
+      if (Model.ProgramId != null && programs != null && programs.ContainsKey(Model.ProgramId.Value))
+      {
+        @programs[Model.ProgramId.Value]
+      }
+    }
+  </div>
+  <div style="grid-column:1/-1"><strong>Cursos inscritos:</strong>
+    <ul>
+      @{
+        var courses = ViewBag.Courses as Dictionary<Guid,string>;
+        foreach(var id in Model.EnrolledCourseIds)
+        {
+          <li>@(courses != null && courses.ContainsKey(id) ? courses[id] : id.ToString())</li>;
+        }
+      }
+    </ul>
+  </div>
+  <div style="grid-column:1/-1"><strong>Notas:</strong> @Model.Notes</div>
+</div>
+
+<p><a class="btn" asp-action="Index">Volver</a></p>

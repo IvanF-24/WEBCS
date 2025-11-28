@@ -1,0 +1,11 @@
+[
+  {
+    "Id": "7a6cd0bf-8790-4d89-ba36-05bde518e563",
+    "CourseId": "2c141c50-ef26-42ab-bc93-345c7068a457",
+    "Day": "Lunes",
+    "Start": "08:00:00",
+    "End": "10:00:00",
+    "Room": "Bloque FB",
+    "Instructor": "CARLOS"
+  }
+]

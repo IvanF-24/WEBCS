@@ -1,0 +1,71 @@
+[
+  {
+    "Id": "15914228-8efd-4b35-9cbb-fc77cf07444a",
+    "FirstName": "logo123",
+    "LastName": "pepe",
+    "DateOfBirth": "2007-02-17T00:00:00",
+    "Email": "benito123@gmail.com",
+    "Phone": "3158583121",
+    "Address": "masachusets",
+    "ProgramId": null,
+    "EnrolledCourseIds": [],
+    "Notes": "pepe",
+    "CreatedBy": "pipol"
+  },
+  {
+    "Id": "18355349-bfd5-4dc4-afbe-b13b9adc568b",
+    "FirstName": "unpelao",
+    "LastName": "serio",
+    "DateOfBirth": "2007-11-27T00:00:00",
+    "Email": "pelaoserio123@gmail.com",
+    "Phone": "21313131",
+    "Address": "almacen seriedad",
+    "ProgramId": "1ed5bda1-2f69-472d-9700-ac50e5650455",
+    "EnrolledCourseIds": [
+      "2c141c50-ef26-42ab-bc93-345c7068a457"
+    ],
+    "Notes": null,
+    "CreatedBy": "pipol"
+  },
+  {
+    "Id": "f0b37d66-a162-439f-b97f-518b4883d8b6",
+    "FirstName": "hola123",
+    "LastName": "pepe",
+    "DateOfBirth": "2025-11-27T16:37:30.7695971-05:00",
+    "Email": "loquito123@gmail.com",
+    "Phone": null,
+    "Address": null,
+    "ProgramId": "1ed5bda1-2f69-472d-9700-ac50e5650455",
+    "EnrolledCourseIds": [],
+    "Notes": null,
+    "CreatedBy": null
+  },
+  {
+    "Id": "5b3c6915-01e6-4249-9311-45df808591ed",
+    "FirstName": "loco",
+    "LastName": "loco",
+    "DateOfBirth": "2025-11-27T16:38:23.3931803-05:00",
+    "Email": "locodeamor123@gmail.com",
+    "Phone": null,
+    "Address": null,
+    "ProgramId": "1ed5bda1-2f69-472d-9700-ac50e5650455",
+    "EnrolledCourseIds": [],
+    "Notes": null,
+    "CreatedBy": null
+  },
+  {
+    "Id": "b4337c87-e332-452d-b473-39349ee1ef79",
+    "FirstName": "Juan",
+    "LastName": "Perez",
+    "DateOfBirth": "2000-01-20T00:00:00",
+    "Email": "money@gmail.com",
+    "Phone": "315250320",
+    "Address": null,
+    "ProgramId": "1ed5bda1-2f69-472d-9700-ac50e5650455",
+    "EnrolledCourseIds": [
+      "2c141c50-ef26-42ab-bc93-345c7068a457"
+    ],
+    "Notes": null,
+    "CreatedBy": "Self-Registration"
+  }
+]

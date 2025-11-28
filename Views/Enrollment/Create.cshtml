@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Nueva Matrícula";
+}
+
+<div class="card shadow border-0 mt-4" style="max-width: 700px; margin: auto;">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">🎓 Asignación Académica</h4>
+    </div>
+    <div class="card-body">
+        
+        @if (ViewBag.Warning != null)
+        {
+            <div class="alert alert-warning border-warning">
+                <i class="bi bi-exclamation-triangle-fill"></i> @ViewBag.Warning
+            </div>
+        }
+
+        <p class="text-muted mb-4">
+            Selecciona el estudiante y el curso. El horario se muestra junto al nombre del curso.
+        </p>
+
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">1. Seleccionar Estudiante</label>
+                <select name="StudentId" class="form-select form-select-lg" asp-items="ViewBag.StudentId" required>
+                    <option value="">-- Buscar estudiante... --</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">2. Seleccionar Curso y Horario</label>
+                <select name="CourseId" class="form-select form-select-lg" asp-items="ViewBag.Courses" required>
+                    <option value="">-- Ver cursos y horarios disponibles... --</option>
+                </select>
+                <div class="form-text">
+                    Si un curso dice "(Sin horario asignado)", debes ir a la sección Horarios y crearle uno.
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-5">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    ✅ Confirmar Matrícula
+                </button>
+                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-light border">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

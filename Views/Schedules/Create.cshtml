@@ -1,0 +1,66 @@
+﻿@model EnrollmentApp.Models.Schedule
+@{
+    ViewData["Title"] = "Crear Horario";
+}
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Asignar Nuevo Horario</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <label asp-for="CourseId" class="form-label fw-bold">Curso</label>
+                    <select asp-for="CourseId" class="form-select" asp-items='new SelectList(ViewBag.Courses, "Id", "Name")'>
+                        <option value="">-- Seleccione un Curso --</option>
+                    </select>
+                    <span asp-validation-for="CourseId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Day" class="form-label fw-bold">Día</label>
+                    <select asp-for="Day" class="form-select">
+                        <option value="">-- Seleccione --</option>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                    </select>
+                    <span asp-validation-for="Day" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Start" class="form-label fw-bold"></label>
+                    <input asp-for="Start" type="time" class="form-control" />
+                    <span asp-validation-for="Start" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="End" class="form-label fw-bold"></label>
+                    <input asp-for="End" type="time" class="form-control" />
+                    <span asp-validation-for="End" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Room" class="form-label fw-bold"></label>
+                    <input asp-for="Room" class="form-control" placeholder="Ej: Bloque B - 204" />
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Instructor" class="form-label fw-bold"></label>
+                    <input asp-for="Instructor" class="form-control" placeholder="Nombre del docente" />
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-end gap-2">
+                <a asp-action="Index" class="btn btn-light border">Cancelar</a>
+                <button type="submit" class="btn btn-primary px-4">Guardar Horario</button>
+            </div>
+        </form>
+    </div>
+</div>

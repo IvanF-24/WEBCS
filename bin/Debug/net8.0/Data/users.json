@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "a2b9839f-53b9-4df7-99aa-ab0fcd131870",
+    "Username": "pipo",
+    "Email": "ffelipemilina2008@gmail.com",
+    "PasswordSalt": "hUgq/P1MfhB3Md21S0rgvA==",
+    "PasswordHash": "Kaas1SyZcxwkti8LQZNnbPwrFd7CJ34FZ3Re8mV511M=",
+    "FullName": "luis",
+    "Role": "Staff"
+  },
+  {
+    "Id": "1e8204f3-b7d9-4a03-9ccc-48d022d52b73",
+    "Username": "pipol",
+    "Email": "ffelipemilina2008@gmail.com",
+    "PasswordSalt": "GKvzkn1kbPbws42sIAL\u002BWw==",
+    "PasswordHash": "413yjrOxNRBYD8M3Mzikp4t67vjLls26JTRaO/qdeiE=",
+    "FullName": "luis",
+    "Role": "Staff"
+  }
+]

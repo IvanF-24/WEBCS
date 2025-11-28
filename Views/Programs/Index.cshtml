@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EnrollmentApp.Models.AcademicProgram>
+@{ ViewData["Title"] = "Programas Académicos"; }
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold text-primary">📂 Programas Académicos</h2>
+    <a asp-action="Create" class="btn btn-primary shadow-sm"><i class="bi bi-plus-lg"></i> Nuevo Programa</a>
+</div>
+
+<div class="card shadow border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Nombre del Programa</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td class="ps-4 fw-bold">@item.Name</td>
+                    <td class="text-muted">@item.Description</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        @if (!Model.Any()) { <div class="p-4 text-center text-muted">No hay programas registrados aún.</div> }
+    </div>
+</div>

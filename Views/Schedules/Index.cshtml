@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EnrollmentApp.Models.Schedule>
+@{ ViewData["Title"] = "Horarios"; }
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold text-warning">📅 Horarios de Clases</h2>
+    <a asp-action="Create" class="btn btn-warning shadow-sm">Asignar Horario</a>
+</div>
+
+<div class="card shadow border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Día</th>
+                    <th>Hora</th>
+                    <th>Aula</th>
+                    <th>Docente</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td class="ps-4 fw-bold">@item.Day</td>
+                    <td>@item.Start - @item.End</td>
+                    <td><span class="badge bg-light text-dark border">@item.Room</span></td>
+                    <td>@item.Instructor</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        @if (!Model.Any()) { <div class="p-4 text-center text-muted">No hay horarios definidos.</div> }
+    </div>
+</div>

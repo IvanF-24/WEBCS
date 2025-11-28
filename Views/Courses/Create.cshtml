@@ -1,0 +1,36 @@
+﻿@model EnrollmentApp.Models.Course
+@{ ViewData["Title"] = "Crear Curso"; }
+
+<div class="card shadow border-0" style="max-width: 600px; margin: auto;">
+    <div class="card-header bg-info text-white"><h5 class="mb-0">Registrar Nueva Materia</h5></div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="row g-2">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Code" class="form-label fw-bold">Código</label>
+                    <input asp-for="Code" class="form-control" placeholder="Ej: MAT-101" />
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label asp-for="Name" class="form-label fw-bold">Nombre</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Credits" class="form-label fw-bold">Créditos</label>
+                <input asp-for="Credits" type="number" class="form-control" />
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="ProgramId" class="form-label fw-bold">Pertenece al Programa:</label>
+                <select asp-for="ProgramId" class="form-select" asp-items="@(new SelectList(ViewBag.Programs ?? new List<AcademicProgram>(), "Id", "Name"))">
+                    <option value="">-- Seleccione --</option>
+                </select>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-info text-white">Guardar Curso</button>
+                <a asp-action="Index" class="btn btn-light border">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

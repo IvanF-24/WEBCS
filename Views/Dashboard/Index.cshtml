@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Panel de Control";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Bienvenido al Panel de Gestión</h1>
+    <p class="lead text-muted">Selecciona una opción para comenzar a administrar la institución.</p>
+</div>
+
+<div class="row g-4 justify-content-center">
+    
+    <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+            <div class="card-body text-center p-4">
+                <div class="mb-3 text-primary"><i class="bi bi-people fs-1"></i></div>
+                <h4 class="fw-bold">Estudiantes</h4>
+                <p class="text-muted small">Datos personales y asignaciones.</p>
+                <a asp-controller="Students" asp-action="Index" class="btn btn-outline-primary w-100 mt-2">Ir a Estudiantes</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+            <div class="card-body text-center p-4">
+                <div class="mb-3 text-success"><i class="bi bi-journal-bookmark fs-1"></i></div>
+                <h4 class="fw-bold">Programas</h4>
+                <p class="text-muted small">Gestión de programas académicos.</p>
+                <a asp-controller="Programs" asp-action="Index" class="btn btn-outline-primary w-100 mt-2">Programas</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+            <div class="card-body text-center p-4">
+                <div class="mb-3 text-info"><i class="bi bi-book fs-1"></i></div>
+                <h4 class="fw-bold">Cursos</h4>
+                <p class="text-muted small">Administración de materias.</p>
+                <a asp-controller="Courses" asp-action="Index" class="btn btn-outline-primary w-100 mt-2">Cursos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+            <div class="card-body text-center p-4">
+                <div class="mb-3 text-warning"><i class="bi bi-calendar3 fs-1"></i></div>
+                <h4 class="fw-bold">Horarios</h4>
+                <p class="text-muted small">Definir horarios y aulas.</p>
+                <a asp-controller="Schedules" asp-action="Index" class="btn btn-outline-primary w-100 mt-2">Horarios</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mt-4">
+        <div class="card h-100 shadow border-primary border-2">
+            <div class="card-body text-center p-4 bg-light">
+                <h3 class="fw-bold text-primary mb-3">🎓 Gestión de Matrícula</h3>
+                <p class="text-muted mb-4">Inscribir estudiantes en cursos activos.</p>
+                
+                <a asp-controller="Enrollment" asp-action="Create" class="btn btn-primary btn-lg w-100 shadow-sm">
+                    + Nueva Matrícula
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

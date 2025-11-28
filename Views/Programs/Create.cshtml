@@ -1,0 +1,23 @@
+﻿@model EnrollmentApp.Models.AcademicProgram
+@{ ViewData["Title"] = "Crear Programa"; }
+
+<div class="card shadow border-0" style="max-width: 600px; margin: auto;">
+    <div class="card-header bg-primary text-white"><h5 class="mb-0">Nuevo Programa Académico</h5></div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label fw-bold"></label>
+                <input asp-for="Name" class="form-control" placeholder="Ej: Ingeniería de Software" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label fw-bold"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success">Guardar Programa</button>
+                <a asp-action="Index" class="btn btn-light border">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

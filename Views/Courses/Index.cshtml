@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EnrollmentApp.Models.Course>
+@{ ViewData["Title"] = "Cursos"; }
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold text-info">📚 Cursos y Materias</h2>
+    <a asp-action="Create" class="btn btn-info text-white shadow-sm">Nuevo Curso</a>
+</div>
+
+<div class="card shadow border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Código</th>
+                    <th>Nombre</th>
+                    <th>Créditos</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td class="ps-4"><span class="badge bg-secondary">@item.Code</span></td>
+                    <td class="fw-bold">@item.Name</td>
+                    <td>@item.Credits</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+         @if (!Model.Any()) { <div class="p-4 text-center text-muted">No hay cursos registrados.</div> }
+    </div>
+</div>

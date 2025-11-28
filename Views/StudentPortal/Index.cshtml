@@ -1,0 +1,53 @@
+@model IEnumerable<EnrollmentApp.Models.Course>
+@{
+    ViewData["Title"] = "Mi Portal";
+    var schedules = ViewBag.Schedules as IEnumerable<EnrollmentApp.Models.Schedule>;
+}
+
+<div class="container mt-4">
+    <div class="bg-primary text-white p-4 rounded-3 mb-4 shadow-sm">
+        <h1 class="display-6">Hola, @ViewBag.StudentName 👋</h1>
+        <p class="mb-0 opacity-75">Programa: <strong>@ViewBag.ProgramName</strong></p>
+    </div>
+
+    <h3 class="fw-bold mb-3 text-secondary">📅 Mis Cursos y Horarios</h3>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Aún no tienes cursos inscritos. El administrador debe asignarte tu carga académica.
+        </div>
+    }
+    else
+    {
+        <div class="row g-3">
+            @foreach (var course in Model)
+            {
+                // Buscamos el horario de este curso
+                var schedule = schedules?.FirstOrDefault(s => s.CourseId == course.Id);
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 border-start border-4 border-primary">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">@course.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Código: @course.Code</h6>
+                            
+                            <hr />
+                            
+                            @if (schedule != null)
+                            {
+                                <p class="mb-1"><strong>Día:</strong> <span class="badge bg-info text-dark">@schedule.Day</span></p>
+                                <p class="mb-1"><strong>Hora:</strong> @schedule.Start - @schedule.End</p>
+                                <p class="mb-0"><strong>Aula:</strong> @schedule.Room</p>
+                            }
+                            else
+                            {
+                                <p class="text-warning small"><i class="bi bi-clock"></i> Horario por definir</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
